@@ -1,0 +1,13 @@
+#!/bin/bash
+month=$(date -I | cut -f 2 -d "-")
+year=$(date -I | cut -f 1 -d "-")
+mois=$(date | awk '{print $3}')
+
+feb=$(( (28 + (year/4) - (year/100) + (year/400) ) % 2))
+echo $feb
+
+if [[($month -eq 1) || ($month -eq 3) || ($month -eq 5) || ($month -eq 7) || ($month -eq 8) || ($month -eq 10) || ($month -eq 12)]]; then
+	echo "Le mois de $mois a 31 jours"
+elif [[($month -eq 4) || ($month -eq 6) || ($month -eq 9) || ($month -eq 11)]]; then
+        echo "Le mois de $mois a 30 jours"	
+fi

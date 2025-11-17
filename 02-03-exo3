@@ -1,0 +1,50 @@
+#!/bin/bash
+direxist=""
+direxist=$(find . -type d -name "exo3")
+
+if [[ -z $direxist ]]; then
+	mkdir exo3
+	echo "Creation du repertoire"
+fi
+cd exo3
+
+i=1
+echo "Initial = $i"
+while (( $i < 11 ))
+do
+	case $i in
+		1)
+			echo 'Un contient "Premiere ligne"' > un
+		;;
+		2)
+			echo 'Deux contient "Deuxieme ligne"' > deux
+		;;
+                3)
+                         echo 'Trois contient "3 ligne"' > trois
+                ;;
+                4)
+                          echo 'Quatre contient "4 ligne"' > quatre
+                ;;
+                5)
+                          echo 'Cinq contient "5 ligne"' > cinq
+                ;;
+                6)
+                          echo 'six contient "6 ligne"' > six
+                ;;
+                7)
+                          echo 'seven contient "7 ligne"' > sept
+                ;;
+                8)
+                          echo 'huit contient "8 ligne"' > huit
+                ;;
+                9)
+                          echo 'neuf contient "9 lignes"' > neuf
+                ;;
+                10)
+                          echo 'dix contient "10 lignes"' > dix
+                ;;
+
+	esac
+
+	((i+=1))
+done
